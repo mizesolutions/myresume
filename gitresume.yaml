@@ -1,0 +1,163 @@
+personalInfo:
+  name: Brian Mize
+  title: Platform & DevOps Engineer
+  email: brian.r.mize@gmail.com
+  location: Spokane, WA, USA
+  links:
+    - label: LinkedIn
+      url: https://www.linkedin.com/in/brian-r-mize
+    - label: GitHub
+      url: https://github.com/mizesolutions
+
+sections:
+  - type: summary
+    tagline: Azure · Terraform · Azure DevOps
+    content: >-
+      I build and run the infrastructure that lets development teams ship without waiting on ops.
+      I own the Azure infrastructure, CI/CD, and release process for a platform of 54+ .NET APIs
+      running across five environments and two Azure tenants. I've worked on this product family
+      since 2019, through the Ecova, ENGIE Impact, and Arcadia years, starting as a software engineer
+      and moving into DevOps. I like problems where the fix is a system, not a one-off patch.
+
+  - type: experience
+    items:
+      - position: DevOps / Platform Engineer
+        organization: Arcadia
+        location: Remote
+        startDate: 2026-05
+        endDate: null
+        description: |-
+          - Designed and maintain a layered Terraform estate for 54+ .NET APIs across 5 environments and 2 tenants. Authored 600+ commits, about 65% of the repo's recent changes.
+          - Built a release orchestrator that runs about 70 Azure DevOps build and release pipelines in throttled batches. A full build of 72 pipelines finishes in about 40 minutes. Authored 500+ pipelines overall.
+          - Led the infrastructure side of an ENGIE-to-Ecova tenant carve-out: stood up APIM and compute in each environment, moved storage from SAS tokens to managed identity, and wrote cross-tenant migration tooling.
+          - Migrated 7 on-prem Windows services to pipeline-driven deployments and moved core platform dependencies into Terraform.
+          - Incident lead for production issues. Find root causes with App Insights and KQL (container OOM crash loops, Functions host 502s, TLS failures) and turn the findings into alerts.
+          - Built Claude Code skills and MCP servers that triage Slack issue reports, run batch releases, provision ADO environments, and diagnose failed pipelines.
+          - Added private endpoints for Managed Redis, IP restrictions on Function Apps, and end-to-end APIM subscription-key enforcement.
+          - Reviewed 550+ PRs from other engineers and authored 1,100+. Write docs and knowledge graphs that work for both people and AI agents.
+
+      - position: DevOps / Platform Engineer
+        organization: ENGIE Impact
+        location: Spokane, WA (Remote)
+        startDate: 2025-08
+        endDate: 2026-05
+        description: |-
+          - Owned infrastructure as code and deployment automation for the Bill Data Services platform family.
+          - Maintained the layered Azure Terraform estate for a .NET API platform, including its private endpoints and API Management layers.
+          - Wrote and managed Azure DevOps YAML pipelines, environment gates, and batched releases.
+          - Led root-cause analysis with App Insights and KQL and turned the results into health checks and alerts.
+
+      - position: Software Engineer
+        organization: ENGIE Impact
+        location: Spokane, WA
+        startDate: 2018-07
+        endDate: 2025-08
+        description: |-
+          Started as Software Engineer Intern II (Jul 2018), then Associate Software Engineer (Nov 2018 - May 2020), then Software Engineer (May 2020 - Aug 2025).
+
+          - Built interfaces between on-prem legacy SQL databases and Azure cloud UIs with C# and .NET.
+          - Delivered a full-stack web application that analyzes utility billing data for 1,400+ enterprise clients.
+          - Automated report delivery, cutting the billing report workload by 85%, and built a bulk-clearing tool that took processing time from hours to minutes.
+          - Wrote NUnit and xUnit tests and kept 90% code coverage across five production applications.
+
+      - position: Software Development Intern
+        organization: Infinetix Corp
+        location: Spokane Valley, WA
+        startDate: 2017-06
+        endDate: 2018-07
+        description: |-
+          - Worked on an internal time-sheet web app built with Symfony.
+          - Set up a Linux VM to host the time-sheet app for employees.
+          - Researched and built C#/WPF proof-of-concept apps to drive mouse and key events from a Pimax VR headset.
+
+      - position: Computer Science Teaching Assistant
+        organization: Eastern Washington University
+        location: Cheney, WA
+        startDate: 2016-10
+        endDate: 2017-12
+        description: |-
+          - Graded coding assignments and tests for 40+ students, built grading rubrics, and entered grades in Canvas.
+          - Gave students feedback on coding practices. Classes: Java I and II, C and UNIX, and Web Application Development.
+
+      - position: Backend Web Developer Intern
+        organization: 14Four
+        location: Spokane, WA
+        startDate: 2017-03
+        endDate: 2017-06
+        description: |-
+          - Coded a budget recipe website and met with the team weekly to design and build it.
+
+  - type: generic
+    title: Projects
+    items:
+      - title: "Claude Ops Skills: AI Log Triage and Incident Journal"
+        url: https://github.com/mizesolutions/claude-ops-skills
+        startDate: 2026-09
+        endDate: null
+        description: >-
+          Two Claude skills for checking the logs on my self-hosted media stack. The triage skill groups
+          repeated errors, sorts them by whether the pipeline is actually broken, checks each against an
+          incident journal, and opens a separate Claude Code session per issue with a written brief.
+          The journal skill records each investigation, including what didn't work.
+
+      - title: Self-Hosted Media Platform and Ingest Pipeline
+        url: https://github.com/mizesolutions/navidrome-media-pipeline
+        startDate: 2026-08
+        endDate: null
+        description: >-
+          Hourly music ingest for Navidrome using PowerShell, Docker, and beets. It only files confident
+          matches and never deletes anything. The repo documents silent failures it hit, including a
+          misnamed scan setting and an mp3gain option that hid 1,147 of 1,148 tag updates from the scanner.
+
+      - title: "AlleyWatch: Event-Driven Vision Alerts"
+        url: https://github.com/mizesolutions/AlleyWatch
+        startDate: 2026-08
+        endDate: 2026-09
+        description: >-
+          Prototype that flags vehicles parked too long in an alley. Frigate handles detection, a .NET 10
+          service tracks MQTT events, and Claude writes a structured report that becomes a Gmail draft for
+          review. Shelved because the camera video quality was too poor to be reliable.
+
+  - type: skills
+    items:
+      - category: Cloud
+        items: [Azure Function Apps, API Management, Key Vault, App Configuration, Container Apps, Managed Redis, Service Bus, Storage, Entra ID, RBAC, Managed Identity]
+      - category: IaC and CI/CD
+        items: [Terraform (azurerm), Azure DevOps YAML and classic pipelines, GitHub]
+      - category: Languages
+        items: [PowerShell, C#, .NET, KQL, SQL, YAML]
+      - category: Observability
+        items: [App Insights, Log Analytics, Azure Monitor, Grafana, PagerDuty]
+      - category: AI tooling
+        items: [Claude Code skills and hooks, MCP servers, agent-ready documentation]
+
+  - type: education
+    items:
+      - institution: Eastern Washington University
+        degree: B.S., Computer Science
+        location: Cheney, WA
+        startDate: "2015"
+        endDate: "2018"
+      - institution: Spokane Falls Community College
+        degree: Associate of Arts and Sciences, Computer Science
+        location: Spokane, WA
+        startDate: "2013"
+        endDate: "2015"
+
+  - type: generic
+    title: Earlier Experience
+    items:
+      - title: Administrator and Director, Young Life
+        subtitle: Spokane and Ione, WA
+        startDate: 2010-03
+        endDate: 2017-03
+        description: >-
+          Ran two annual fundraisers that raised funding 40%, oversaw a $165,000 annual budget, and
+          recruited, trained, and supervised volunteer leaders.
+      - title: Service Technician, P B Hoidale Co Inc
+        subtitle: Oklahoma City, OK
+        startDate: 2001-04
+        endDate: 2006-06
+        description: >-
+          Installed and maintained fuel control and point-of-sale systems across Oklahoma, Texas, Kansas,
+          and Arkansas, working from electrical and mechanical schematics.

@@ -1,0 +1,35 @@
+name: Validate resume
+
+on:
+  pull_request:
+    paths:
+      - gitresume.yaml
+      - .github/workflows/validate-resume.yml
+  push:
+    branches:
+      - main
+    paths:
+      - gitresume.yaml
+      - .github/workflows/validate-resume.yml
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install check-jsonschema
+        run: pip install check-jsonschema==0.39.0
+
+      - name: Validate gitresume.yaml against schema
+        run: check-jsonschema --schemafile https://gitresume.co/schema/resume.schema.json gitresume.yaml

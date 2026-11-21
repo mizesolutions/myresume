@@ -56,7 +56,7 @@ sections:
           Started as Software Engineer Intern II (Jul 2018), then Associate Software Engineer (Nov 2018 - May 2020), then Software Engineer (May 2020 - Aug 2025).
 
           - Built interfaces between on-prem legacy SQL databases and Azure cloud UIs with C# and .NET.
-          - Delivered a full-stack web application that analyzes utility billing data for 1,400+ enterprise clients.
+          - Delivered a full-stack web application (Angular/TypeScript frontend, C#/.NET backend) that analyzes utility billing data for 1,400+ enterprise clients.
           - Automated report delivery, cutting the billing report workload by 85%, and built a bulk-clearing tool that took processing time from hours to minutes.
           - Wrote NUnit and xUnit tests and kept 90% code coverage across five production applications.
 
@@ -126,6 +126,8 @@ sections:
         items: [Terraform (azurerm), Azure DevOps YAML and classic pipelines, GitHub]
       - category: Languages
         items: [PowerShell, C#, .NET, KQL, SQL, YAML]
+      - category: Frontend
+        items: [Angular, TypeScript]
       - category: Observability
         items: [App Insights, Log Analytics, Azure Monitor, Grafana, PagerDuty]
       - category: AI tooling
